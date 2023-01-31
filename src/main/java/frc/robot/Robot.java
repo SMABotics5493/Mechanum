@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends TimedRobot {
   private static final int kFrontLeftChannel = 20;// 2;
   private static final int kRearLeftChannel = 2;// 3;
-  private static final int kFrontRightChannel = 8; //1;
+  private static final int kFrontRightChannel = 14; //1;
   private static final int kRearRightChannel = 9; // 0;
 
   private static final int kJoystickChannel = 0;
