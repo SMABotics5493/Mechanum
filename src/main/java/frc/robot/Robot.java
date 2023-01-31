@@ -37,7 +37,7 @@ public class Robot extends TimedRobot {
 
     // Invert the right side motors.
     // You may need to change or remove this to match your robot.
-    frontRight.setInverted( false);
+    frontRight.setInverted(false);
     rearRight.setInverted(true);
 
     m_robotDrive = new MecanumDrive(frontLeft, rearLeft, frontRight, rearRight);
@@ -55,27 +55,27 @@ public class Robot extends TimedRobot {
     y = m_stick.getY();
     z = m_stick.getZ();
 
-    double theta = m_stick.getDirectionRadians();
-    double power = m_stick.getMagnitude();
+    // double theta = m_stick.getDirectionRadians();
+    // double power = m_stick.getMagnitude();
 
-    sin = Math.sin(theta - Math.PI/4);
-    cos = Math.cos(theta - Math.PI/4);
+    // sin = Math.sin(theta - Math.PI/4);
+    // cos = Math.cos(theta - Math.PI/4);
 
-    max = Math.max(Math.abs(sin), Math.abs(cos));
+    // max = Math.max(Math.abs(sin), Math.abs(cos));
 
-    double turn = 0;
-    double leftFront2 = power * cos/max + turn;
-    double rightFront2 = power * sin/max + turn;
-    double leftRear2 = power * cos/max + turn;
-    double rightRear2 = power * sin/max + turn;
+    // double turn = 0;
+    // double leftFront2 = power * cos/max + turn;
+    // double rightFront2 = power * sin/max + turn;
+    // double leftRear2 = power * cos/max + turn;
+    // double rightRear2 = power * sin/max + turn;
 
-    // input: theta, power, and turn
-    sin = Math.sin(theta - Math.PI/4);
-    cos = Math.cos(theta - Math.PI/4);
-    max = Math.max(Math.abs(sin),
-    Math.abs(cos));
+    // // input: theta, power, and turn
+    // sin = Math.sin(theta - Math.PI/4);
+    // cos = Math.cos(theta - Math.PI/4);
+    // max = Math.max(Math.abs(sin),
+    // Math.abs(cos));
 
-
+    m_robotDrive.driveCartesian(x,y,z);
 
     SmartDashboard.putNumber("Cartesian Y", -m_stick.getY()); 
     SmartDashboard.putNumber("Cartesian X", -m_stick.getX()); 
