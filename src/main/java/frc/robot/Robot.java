@@ -38,7 +38,7 @@ public class Robot extends TimedRobot {
     // Invert the right side motors.
     // You may need to change or remove this to match your robot.
     frontRight.setInverted(false);
-    rearRight.setInverted(true);
+    rearRight.setInverted(false);
 
     m_robotDrive = new MecanumDrive(frontLeft, rearLeft, frontRight, rearRight);
 
@@ -52,8 +52,8 @@ public class Robot extends TimedRobot {
     //m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
     double sin, cos, max, x, y, z;
     x = m_stick.getX();
-    y = m_stick.getY();
-    z = m_stick.getZ();
+    y = m_stick.getRawAxis(0);//m_stick.getY();
+    z = m_stick.getRawAxis(4);
 
     // double theta = m_stick.getDirectionRadians();
     // double power = m_stick.getMagnitude();
